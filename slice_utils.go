@@ -60,3 +60,11 @@ func Filter[T any](s []T, f func(T) bool) []T {
     }
     return result
 }
+
+func Reduce[T any, M any](s []T, init M, f func(M, T) M) M {
+    cur := init
+    for _, v := range s {
+        cur = f(cur, v)
+    }
+    return cur
+}

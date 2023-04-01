@@ -72,3 +72,15 @@ func TestFilter(t *testing.T) {
 		 t.Errorf("should return %v but got %v", expected, result)
     }
 }
+
+func TestReducer(t *testing.T) {
+    slice := []string{"kei", "yoko", "blues", "jake"}
+
+    result := Reduce(slice, 0, func(memo int, s string) int {
+        return memo + len(s)
+    })
+
+    if result != 16 {
+       t.Errorf("should return 16 but got %d", result)
+    }
+}
