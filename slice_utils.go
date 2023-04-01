@@ -1,6 +1,6 @@
 package slice_utils
 
-func Contains[E comparable](s []E, v E) bool {
+func Contains[T comparable](s []T, v T) bool {
     for _, vs := range s {
         if v == vs {
             return true
@@ -9,8 +9,8 @@ func Contains[E comparable](s []E, v E) bool {
     return false
 }
 
-func Reverse[E any](s []E) []E {
-    result := make([]E, 0, len(s))
+func Reverse[T any](s []T) []T {
+    result := make([]T, 0, len(s))
     for i := len(s) - 1; i >= 0; i-- {
         result = append(result, s[i])
     }
