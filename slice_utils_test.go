@@ -1,6 +1,7 @@
 package slice_utils
 
 import (
+	"strings"
 	"testing"
 )
 
@@ -42,5 +43,18 @@ func TestCompareStringSlices(t *testing.T) {
 
     if CompareStringSlices(slice1, slice3) {
         t.Errorf("should return false for slice1: %s and slice3: %s", slice1, slice3)
+    }
+}
+
+func TestMap(t *testing.T) {
+    slice := []string{"kei", "yoko", "blues", "jake"}
+    expected := []string{"KEI", "YOKO", "BLUES", "JAKE"}
+
+    result := Map(slice, func(s string) string {
+        return strings.ToUpper(s)
+    })
+
+    if !CompareStringSlices(expected, result) {
+		 t.Errorf("should return %s but got %s", expected, result)
     }
 }
