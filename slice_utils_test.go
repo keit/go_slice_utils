@@ -1,6 +1,8 @@
 package slice_utils
 
 import (
+	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -83,4 +85,22 @@ func TestReducer(t *testing.T) {
     if result != 16 {
        t.Errorf("should return 16 but got %d", result)
     }
+}
+
+func TestSomething(t *testing.T) {
+    slice := []string{"kei", "yoko", "blues", "jake"}
+    toUpper := func(s string) string{
+        return strings.ToUpper(s)
+    }
+    toLength :=func(s string) int{
+        return len(s)
+    }
+
+    filterEven :=func(i int) bool{
+        return i % 2 == 0
+    }
+
+    upper := Map(slice, toUpper)
+    lens := Map(upper, toLength)
+    fmt.Println(Filter(lens, filterEven))
 }
