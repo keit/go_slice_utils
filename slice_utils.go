@@ -29,12 +29,23 @@ func CompareStringSlices(a, b []string) bool {
         return true
 }
 
-type mapFunc[E any] func(E) E
+func CompareIntSlices(a, b []int) bool {
+        if len(a) != len(b) {
+                return false
+        }
+        for i, v := range a {
+                if v != b[i] {
+                        return false
+                }
+        }
+        return true
+}
 
-func Map[E any](s []E, f mapFunc[E]) []E {
-    result := make([]E, len(s))
-    for i := range s {
-        result[i] = f(s[i])
+
+func Map[T any, M any](a []T, f func(T) M) []M {
+    n := make([]M, len(a))
+    for i, e := range a {
+        n[i] = f(e)
     }
-    return result
+    return n
 }
