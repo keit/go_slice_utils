@@ -1,4 +1,4 @@
-package slice_utils
+package go_slice_utils
 
 import (
 	"fmt"

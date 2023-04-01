@@ -1,4 +1,4 @@
-package slice_utils
+package go_slice_utils
 
 func Contains[T comparable](s []T, v T) bool {
     for _, vs := range s {
