@@ -1,4 +1,4 @@
-package go_map_reduce
+package slice_utils
 
 func Contains[E comparable](s []E, v E) bool {
     for _, vs := range s {

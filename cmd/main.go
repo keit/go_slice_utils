@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/keit/go_map_reduce"
+	"github.com/keit/slice_utils"
 )
 
 func main() {
 	slice := []string{"kei", "yoko", "blues", "jake"}
-    fmt.Println(go_map_reduce.Contains(slice, "jake"))
+    fmt.Println(slice_utils.Contains(slice, "jake"))
 }

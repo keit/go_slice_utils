@@ -1,4 +1,4 @@
-package go_map_reduce
+package slice_utils
 
 import (
 	"testing"

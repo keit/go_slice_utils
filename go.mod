@@ -1,3 +1,3 @@
-module github.com/keit/go_map_reduce
+module github.com/keit/slice_utils
 
 go 1.19
