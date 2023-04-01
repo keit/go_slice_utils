@@ -58,3 +58,17 @@ func TestMap(t *testing.T) {
 		 t.Errorf("should return %v but got %v", expected, result)
     }
 }
+
+func TestFilter(t *testing.T) {
+    slice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+    expected := []int{1,3,5,7, 9}
+
+    result := Filter(slice, func(i int) bool {
+        return i % 2 == 1
+    })
+
+
+    if !CompareIntSlices(expected, result) {
+		 t.Errorf("should return %v but got %v", expected, result)
+    }
+}
